@@ -14,6 +14,7 @@ build:
   artifacts:
     paths:
       - app/build/exe/main/debug/app
+      - lib/build/lib/main/debug/shared/
     expire_in: 1 hour
 
 run:
