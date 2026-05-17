@@ -1,4 +1,4 @@
-image: eclipse-temurin:17-jdk
+image: gradle:8-jdk17
 
 stages:
   - build
@@ -6,12 +6,11 @@ stages:
 
 before_script:
   - apt-get update && apt-get install -y g++
-  - chmod +x gradlew
 
 build:
   stage: build
   script:
-    - ./gradlew build
+    - gradle build
   artifacts:
     paths:
       - app/build/exe/main/debug/app
