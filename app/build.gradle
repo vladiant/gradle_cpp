@@ -1,0 +1,11 @@
+plugins {
+    id 'cpp-application'
+}
+
+dependencies {
+    implementation project(':lib')
+}
+
+application.binaries.configureEach {
+    compileTask.get().compilerArgs.addAll(['-Wall', '-Wextra'])
+}

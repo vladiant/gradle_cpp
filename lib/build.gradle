@@ -1,0 +1,12 @@
+plugins {
+    id 'cpp-library'
+}
+
+library {
+    // Expose both shared and static variants
+    linkage = [Linkage.STATIC, Linkage.SHARED]
+}
+
+library.binaries.configureEach {
+    compileTask.get().compilerArgs.addAll(['-Wall', '-Wextra'])
+}

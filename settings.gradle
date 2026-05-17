@@ -1,0 +1,3 @@
+rootProject.name = 'gradle-cpp-example'
+
+include('lib', 'app')
