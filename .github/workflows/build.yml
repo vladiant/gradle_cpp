@@ -30,4 +30,4 @@ jobs:
         run: gradle build
 
       - name: Run app
-        run: ./app/build/exe/main/debug/app
+        run: LD_LIBRARY_PATH=lib/build/lib/main/debug/shared ./app/build/exe/main/debug/app

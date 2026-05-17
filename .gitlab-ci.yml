@@ -19,6 +19,6 @@ build:
 run:
   stage: run
   script:
-    - ./app/build/exe/main/debug/app
+    - LD_LIBRARY_PATH=lib/build/lib/main/debug/shared ./app/build/exe/main/debug/app
   dependencies:
     - build
