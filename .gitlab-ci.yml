@@ -1,0 +1,25 @@
+image: eclipse-temurin:17-jdk
+
+stages:
+  - build
+  - run
+
+before_script:
+  - apt-get update && apt-get install -y g++
+  - chmod +x gradlew
+
+build:
+  stage: build
+  script:
+    - ./gradlew build
+  artifacts:
+    paths:
+      - app/build/exe/main/debug/app
+    expire_in: 1 hour
+
+run:
+  stage: run
+  script:
+    - ./app/build/exe/main/debug/app
+  dependencies:
+    - build
